@@ -7,7 +7,7 @@ app.get('/:date', function(req, res){
     var inputurl = req.params.date;
     var outputdate;
     var output = {"date" : null, "unix": null};
-    if(typeof parseInt(inputurl, 10) === 'number' & !isNaN(parseInt(inputurl, 10))){
+    if(!isNaN(parseInt(inputurl, 10))){
         outputdate = new Date(parseInt(inputurl, 10)*1000);
         output["date"] = outputdate.toDateString();
         output["unix"] = outputdate.getTime() / 1000;
